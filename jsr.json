@@ -1,0 +1,17 @@
+{
+    "name": "@kcn-group/iso-6346-validator",
+    "version": "0.1.0",
+    "exports": "./lib/index.ts",
+    "publish": {
+      "include": [
+        "CHANGELOG.md",
+        "README.md",
+        "LICENSE",
+        "lib/**/*.ts",
+        "jsr.json"
+      ],
+      "exclude": [
+        "**/*.test.ts"
+      ]
+    }
+  }

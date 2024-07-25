@@ -1,0 +1,18 @@
+{
+  "name": "iso-6346-validator",
+  "type": "module",
+  "scripts": {
+    "build": "tsc",
+    "test": "glob -c \"tsx --test --test-reporter spec \" \"./test/**/*.test.ts\""
+  },
+  "devDependencies": {
+    "@eslint/js": "^9.7.0",
+    "@types/eslint__js": "^8.42.3",
+    "eslint": "^8.57.0",
+    "glob": "^11.0.0",
+    "ts-node": "^10.9.2",
+    "tsx": "^4.16.2",
+    "typescript": "^5.5.4",
+    "typescript-eslint": "^7.17.0"
+  }
+}
