@@ -87,12 +87,26 @@ test("isValid_CorrectContainerNumber_True", (t) => {
   const unexpectedValidationResult: ISO6346ValidationResult = {
     isValid: false,
     reason: InvalidReasonEnum.InvalidLength,
-  }
+  };
 
   const validationResult = isValid(correctNumber);
   assert.deepStrictEqual(expectedValidationResult, validationResult);
   assert.notDeepStrictEqual(unexpectedValidationResult, validationResult);
 });
+
+test("isValid_CorrectContainerNumberWithZeroChecksum_True", (t) => {
+  const correctNumber = "HLBU3616150";
+  const expectedValidationResult: ISO6346ValidationResult = truthyValidationResult;
+
+  const unexpectedValidationResult: ISO6346ValidationResult = {
+    isValid: false,
+    reason: InvalidReasonEnum.CheckDigitFalsy,
+  };
+
+  const validationResult = isValid(correctNumber);
+  assert.deepStrictEqual(expectedValidationResult, validationResult);
+  assert.notDeepStrictEqual(unexpectedValidationResult, validationResult);
+})
 
 test("isValid_IncorrectCheckSum_False", (t) => {
   const correctNumber = "CSQU3054384";

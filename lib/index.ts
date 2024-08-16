@@ -38,7 +38,8 @@ export function isValid(iso63456ContainerNumber: string): ISO6346ValidationResul
     for (let i=0; i<values.length; i++) {
         sum = sum + values[i]!*ISO_6346_MULTIPLIER_MAP[i]!
     }
-    const calculatedCheckDigit = sum-(Math.floor(sum / 11)*11); 
+    let calculatedCheckDigit = sum - (Math.floor(sum / 11)*11);
+    if (calculatedCheckDigit === 10) calculatedCheckDigit = 0;
     if (calculatedCheckDigit === Number(checkDigit)) return { isValid: true, reason: null }
     else return { isValid: false, reason: InvalidReasonEnum.CheckDigitFalsy }
 }
