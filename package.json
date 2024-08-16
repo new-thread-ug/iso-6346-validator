@@ -14,5 +14,6 @@
     "tsx": "^4.16.2",
     "typescript": "^5.5.4",
     "typescript-eslint": "^7.17.0"
-  }
+  },
+  "version": "0.0.1"
 }
